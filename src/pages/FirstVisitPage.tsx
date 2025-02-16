@@ -20,7 +20,7 @@ function getCookie(name: string): { firstname: string, lastname: string, event_c
     return null;
   }
 
-function setCookie(name: string, values: { firstname: string, lastname: string, event_code: string }, daysToExpire: number = 7, path: string = "/") {
+function setCookie(name: string, values: { firstname: string, lastname: string, event_code: string }, daysToExpire: number = 365, path: string = "/") {
     const expirationDate = new Date();
     expirationDate.setTime(expirationDate.getTime() + daysToExpire * 24 * 60 * 60 * 1000); // Set expiration time
 
@@ -32,57 +32,6 @@ function setCookie(name: string, values: { firstname: string, lastname: string, 
     // Set the cookie in the document
     document.cookie = name + "=" + cookieValue;
 }
-
-async function checkPersonExists(firstname: string, lastname: string): Promise<any> {
-    const url = new URL('http://127.0.0.1:8000/api/persons/exists');
-    url.searchParams.append('firstname', firstname);
-    url.searchParams.append('lastname', lastname);
-
-    try {
-        const response = await fetch(url.toString(), {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        if (response.ok) {
-            const person = await response.json();
-            return person;
-        } else {
-            return null;
-        }
-    } catch (error) {
-        console.error("Error checking person exists:", error);
-        return null;
-    }
-}
-
-async function createPerson(firstname: string, lastname: string): Promise<any> {
-    const url = 'http://127.0.0.1:8000/api/persons/';
-    const payload = { firstname, lastname };
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-        });
-
-        if (response.ok) {
-            const person = await response.json();
-            return person;
-        } else {
-            console.error("Failed to create person:", response.statusText);
-            return null;
-        }
-    } catch (error) {
-        console.error("Error creating person:", error);
-        return null;
-    }
-}
-
 
 const FirstVisitPage = () => {
     const navigate = useNavigate();
@@ -125,36 +74,25 @@ const FirstVisitPage = () => {
         }
     });
 
-    const submitForm = async(values: Record<string, any>) => {
+    const submitForm = (values: Record<string, any>) => {
         setLoading(true);
         setError(null);
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/events/code/${values.event_code}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
-            if (response.ok) {
-                let person = await checkPersonExists(values.firstname, values.lastname);
-                if (!(person)) {
-                    person = await createPerson(values.firstname, values.lastname);
-                }
-                
-                var cookie = {id: person.id, firstname: values.firstname, lastname: values.lastname, event_code: values.event_code };
-                
+            const eventCode = import.meta.env.VITE_EVENT_CODE;
+            if (values.event_code === eventCode) {
+                const cookie = { firstname: values.firstname, lastname: values.lastname, event_code: values.event_code };
                 setCookie("event", cookie);
                 navigate('/');
             } else {
-                setError("Event not found")
-            } 
+                setError("Event code is incorrect");
+            }
         } catch (error) {
-            setError("No event found");
+            setError("An error occurred while processing your request");
         } finally {
             setLoading(false);
         }
-    }
+    };
 
     return (
         <Container style={{

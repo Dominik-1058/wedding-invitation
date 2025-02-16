@@ -8,13 +8,6 @@ import blumen_ende_home from '../assets/blumen_ende_home.png';
 export function FooterComponent() {
     const isTablet = useMediaQuery('(max-width: 992px)');
     const isDesktop = useMediaQuery('(max-width: 1200px)');
-    // const location = useLocation();
-    // const isRSVP = location.pathname === '/rsvp';
-    // const showFooter = location.pathname !== '/';
-
-//   if (isRSVP) {
-//     return null;
-//   }
 
   return (
     
