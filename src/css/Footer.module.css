@@ -1,0 +1,9 @@
+.footer {
+    min-height: 120px;
+    position: relative;
+  }
+  
+  .inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }

@@ -1,0 +1,54 @@
+:root {
+  --section-timeline: #7F909E;
+  --theme-one: #4F2416;
+  --theme-two: #C05E2F;
+  --theme-three: #333B61;
+  --theme-four: #A3BCD0;
+  --button_bg: #7F909E;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.section_timeline {
+  min-height: 100vh;
+  background-color: var(--section-timeline);
+  color: white;
+}
+
+.theme_one {
+  background-color: var(--theme-one);
+}
+
+.theme_two {
+  background-color: var(--theme-two);
+}
+
+.theme_three {
+  background-color: var(--theme-three);
+}
+
+.theme_four {
+  background-color: var(--theme-four);
+}
+
+.btn_bg {
+  background-color: var(--button_bg);
+}
+
+.timeline_dot {
+  background-color: var(--section-timeline);
+}
+
+.timeline_item_before::before {
+  padding-right: 0!important;
+}
+
+.timeline_item_after::before {
+  padding-left: 0!important;
+}
+
+.special {
+  font-family: 'Moon Dance';
+}
