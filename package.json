@@ -1,13 +1,16 @@
 {
-  "name": "save-the-date-frontend",
+  "homepage": "https://dominik-1058.github.io/ordering-public",
+  "name": "wedding-invitation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
