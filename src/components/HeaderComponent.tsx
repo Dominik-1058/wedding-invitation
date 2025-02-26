@@ -60,8 +60,9 @@ const HeaderComponent = () => {
                         className={classes.logo} 
                         style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}
                     >
-                        <Image src={dark_blue_bright_red} alt="Logo" h={"50"} style={{
-                            maxHeight: '60px'
+                        <Image src={dark_blue_bright_red} alt="Logo" style={{
+                            maxHeight: '60px',
+                            width: 'auto',
                         }}/>
                     </Text>
             
@@ -82,7 +83,10 @@ const HeaderComponent = () => {
                     onClose={toggle}
                     size="100%"
                     padding="md"
-                    title={<Image src={dark_blue_bright_red} alt="Logo" h={"50"} />}
+                    title={<Image src={dark_blue_bright_red} alt="Logo" style={{
+                        maxHeight: '60px',
+                        width: 'auto',
+                    }} />}
                     hiddenFrom="md"
                     zIndex={1000000}
                 >

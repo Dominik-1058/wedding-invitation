@@ -11,20 +11,19 @@ const RSVPPage = () => {
     const isMobile = useMediaQuery('(max-width: 576px)');
 
     return (
-        <Container size={'xl'} style={{
-            paddingTop: '2rem',
-        }}>
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSf99zx4tleAIPcK1z93EEinn2SNDF3xXfU7CgfBttru0Pbn_A/viewform?embedded=true" 
-                width={isMobile ? "100%" : "568px"}
-                height="944"
-                style={{
-                    border: 'none',
-                }}
-            >
-                Wird geladen…
-            </iframe>
-        </Container>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf99zx4tleAIPcK1z93EEinn2SNDF3xXfU7CgfBttru0Pbn_A/viewform?embedded=true" 
+            width={isMobile ? "80%" : "568px"}
+            height="944"
+            style={{
+                border: 'none',
+                overflow: 'hidden', /* Prevent the scrollbars from appearing */
+                width: '100%', /* Ensure the iframe fits within the container */
+                position: 'relative', /* Optional: to better control iframe positioning */
+            }}
+        >
+            Wird geladen…
+        </iframe>
     );
 };
 
