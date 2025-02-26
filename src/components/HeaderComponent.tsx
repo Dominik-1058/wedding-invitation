@@ -11,9 +11,9 @@ import blumen_oberhalb from '../assets/blumen_oberhalb.png';
 
 const links = [
   { link: '/', label: 'Übersicht' },
-  { link: '/images', label: 'Fotos' },
+//   { link: '/images', label: 'Fotos' },
 //   { link: '/messages', label: 'Nachrichten' },
-  { link: '/rsvp', label: 'RSVP' },
+//   { link: '/rsvp', label: 'RSVP' },
   { link: '/infos', label: 'Infos' },
 ];
 

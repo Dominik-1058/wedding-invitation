@@ -4,6 +4,7 @@
   --theme-two: #C05E2F;
   --theme-three: #333B61;
   --theme-four: #A3BCD0;
+  --theme-five: #582432;
   --button_bg: #7F909E;
 }
 
@@ -31,6 +32,10 @@
 
 .theme_four {
   background-color: var(--theme-four);
+}
+
+.theme_five {
+  background-color: var(--theme-five);
 }
 
 .btn_bg {

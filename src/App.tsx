@@ -67,11 +67,11 @@ function App() {
       <Box className='content'>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/images" element={<ImagePage />} />
+            {/* <Route path="/images" element={<ImagePage />} /> */}
             {/* <Route path="/messages" element={<MessagePage />} /> */}
             <Route path="/rsvp" element={<RSVPPage />} />
-            <Route path="first-visit" element={<FirstVisitPage />} />
-            <Route path="infos" element={<InfoPage />} />
+            <Route path="/first-visit" element={<FirstVisitPage />} />
+            <Route path="/infos" element={<InfoPage />} />
         </Routes>
         <ScrollIndicator />
       </Box>

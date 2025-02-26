@@ -19,8 +19,11 @@ const RSVPComponent = () => {
                 zIndex: 10
                 }}
                 className={styles.btn_bg}>
-                <Text size='md'>Antworten</Text>
+                <Text size='md'>Anmelden</Text>
             </Button>
+            <Text style={{ textAlign: 'center' }} pt={"xs"}>
+                Rückmeldung bitte bis zum 31.03.2025.
+            </Text>
         </Box>
     );
 };

@@ -16,6 +16,8 @@ import blumen_unterhalb from '../assets/blumen_unterhalb.png';
 import blumen_ende_home from '../assets/blumen_ende_home.png';
 
 const CouplePage = () => {
+    const isMobile = useMediaQuery('(max-width: 576px)');
+
     return (
         <Box className={styles.section}style={{
             position: 'relative',
@@ -29,7 +31,7 @@ const CouplePage = () => {
                 <Text size="xl">06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
-            <Image src={blumen_ende_home} alt="blumen_ende_home" w={300} style={{
+            <Image src={blumen_ende_home} alt="blumen_ende_home" w={isMobile ? 200 : 300} style={{
                 position: 'absolute',
                 left: 0,
                 bottom: 0,

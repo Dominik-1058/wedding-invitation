@@ -53,6 +53,7 @@ const DresscodePage = () => {
                                 >
                                     <Avatar className={styles.theme_one} radius={"xl"} size={ isMobile ? "md" : "2.8rem"}> </Avatar>
                                     <Avatar className={styles.theme_two} radius={"xl"} size={ isMobile ? "md" : "2.8rem"}> </Avatar>
+                                    <Avatar className={styles.theme_five} radius={"xl"} size={ isMobile ? "md" : "2.8rem"}> </Avatar>
                                     <Avatar className={styles.theme_three} radius={"xl"} size={ isMobile ? "md" : "2.8rem"}> </Avatar>
                                     <Avatar className={styles.theme_four} radius={"xl"} size={ isMobile ? "md" : "2.8rem"}> </Avatar>
                                 </Group>
