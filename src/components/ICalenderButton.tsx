@@ -33,24 +33,24 @@ export const ICalenderButton: React.FC<CalendarEventProps> = ({
 
         const eventContent = `
             BEGIN:VCALENDAR
-                VERSION:2.0
-                BEGIN:VEVENT
-                    SUMMARY:${title}
-                        DTSTART:${formatDate(start)}
-                        DTEND:${formatDate(end)}
-                        DESCRIPTION:${description}
-                        LOCATION:${location}
-                        BEGIN:VALARM
-                            TRIGGER:${reminderTriggerFirst}
-                            ACTION:DISPLAY
-                            DESCRIPTION:Reminder for ${title}
-                        END:VALARM
-                        BEGIN:VALARM
-                            TRIGGER:${reminderTriggerSecond}
-                            ACTION:DISPLAY
-                            DESCRIPTION:Reminder for ${title}
-                        END:VALARM
-                END:VEVENT
+            VERSION:2.0
+            BEGIN:VEVENT
+            SUMMARY:${title}
+            DTSTART:${formatDate(start)}
+            DTEND:${formatDate(end)}
+            DESCRIPTION:${description}
+            LOCATION:${location}
+            BEGIN:VALARM
+            TRIGGER:${reminderTriggerFirst}
+            ACTION:DISPLAY
+            DESCRIPTION:Reminder for ${title}
+            END:VALARM
+            BEGIN:VALARM
+            TRIGGER:${reminderTriggerSecond}
+            ACTION:DISPLAY
+            DESCRIPTION:Reminder for ${title}
+            END:VALARM
+            END:VEVENT
             END:VCALENDAR`;
 
         const blob = new Blob([eventContent.trim()], { type: "text/calendar" });
